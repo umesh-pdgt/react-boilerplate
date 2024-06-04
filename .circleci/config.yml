@@ -18,4 +18,4 @@ jobs:
 workflows:
   trigger_pipeline:
     jobs:
-      - trigger_pipeline: null
+      - trigger_pipeline
