@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   node: circleci/node@5.0.2
 jobs:
-  build_and_test:
+  trigger_pipeline:
     executor: node/default
     steps:
       - run:
@@ -15,3 +15,8 @@ jobs:
             '{\"branch\":\"feature/design-new-api\",\"tag\":\"v3.1.4159\",\"par\
             ameters\":{\"deploy_prod\":true}}'"
           name: Trigger CircleCI Pipeline via Curl
+workflows:
+  trigger_pipeline:
+    jobs:
+      - trigger_pipeline:
+      
